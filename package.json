@@ -1,0 +1,33 @@
+{
+  "name": "twinql-server",
+  "version": "0.1.0",
+  "description": "Queries the semantic web on your behalf",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan-f/twinql-server.git"
+  },
+  "keywords": [
+    "twinql",
+    "semantic",
+    "web",
+    "linked",
+    "data",
+    "ldp"
+  ],
+  "author": "Daniel Friedman <dfriedman58@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dan-f/twinql-server/issues"
+  },
+  "homepage": "https://github.com/dan-f/twinql-server#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "twinql": "^0.2.3"
+  }
+}
