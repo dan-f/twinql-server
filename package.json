@@ -1,6 +1,6 @@
 {
   "name": "twinql-server",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Queries the semantic web on your behalf",
   "main": "server.js",
   "scripts": {
