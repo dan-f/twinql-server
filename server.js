@@ -10,6 +10,7 @@
  */
 
 const bodyParser = require('body-parser')
+const compression = require('compression')
 const express = require('express')
 const twinql = require('twinql')
 
@@ -25,6 +26,8 @@ app.disable('x-powered-by')
 app.set('trust proxy', REVERSE_PROXY_IP)
 
 app.use(bodyParser.text())
+
+app.use(compression())
 
 app.post('/', (req, res, next) => {
   const backend = new twinql.LdpBackend({ proxyUri: FORWARD_PROXY_URI })
