@@ -31,13 +31,18 @@ app.post('/', (req, res, next) => {
   res.set('access-control-allow-origin', '*')
   res.set('vary', 'origin')
   return twinql.query(backend, req.body)
-    .then(resp => res.json(resp))
-    .catch(err => next(err))
+    .then(res.json.bind(res))
+    .catch(next)
 })
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.status(400).json({ '@error': err })
+  res.status(400).json({
+    '@error': {
+      type: err.name,
+      message: err.message
+    }
+  })
 })
 
 app.listen(PORT, HOSTNAME, () => {
