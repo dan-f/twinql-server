@@ -2,9 +2,10 @@
   "name": "twinql-server",
   "version": "0.4.0",
   "description": "Queries the semantic web on your behalf",
-  "main": "server.js",
+  "main": "lib/server.js",
+  "bin": "./bin/twinql-server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "./bin/twinql-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push --follow-tags"
   },
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/dan-f/twinql-server#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "commander": "^2.9.0",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "twinql": "^0.2.3"
