@@ -1,6 +1,6 @@
 {
   "name": "twinql-server",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Queries the semantic web on your behalf",
   "main": "lib/server.js",
   "bin": "./bin/twinql-server.js",
