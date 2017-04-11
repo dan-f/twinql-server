@@ -13,7 +13,7 @@
 
 const commander = require('commander')
 
-const runTwinqlServer = require('../lib/server.js')
+const { createServer, runServer } = require('../lib/server.js')
 const npmConf = require('../package.json')
 
 commander
@@ -29,4 +29,6 @@ commander
   .option('-f, --forward-proxy-uri [value]', 'The URI of the forward-facing Solid agent')
   .parse(process.argv)
 
-runTwinqlServer(commander)
+const { hostname, port, reverseProxyIp, forwardProxyUri } = commander
+
+runServer(createServer({ reverseProxyIp, forwardProxyUri }), { hostname, port })
