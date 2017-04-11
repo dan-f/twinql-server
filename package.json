@@ -6,7 +6,10 @@
   "bin": "./bin/twinql-server.js",
   "scripts": {
     "start": "./bin/twinql-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --verbose lib/*.js bin/*.js test/*.js",
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html mocha test/*.js",
+    "coverage:coveralls": "nyc report --reporter=text-lcov | coveralls",
     "postversion": "git push --follow-tags"
   },
   "repository": {
@@ -33,5 +36,17 @@
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "twinql": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.0",
+    "cross-env": "^4.0.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
+    "proxyquire": "^1.7.11",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
+    "standard": "^10.0.1",
+    "supertest": "^3.0.0"
   }
 }
