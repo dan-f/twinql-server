@@ -1,6 +1,6 @@
 {
   "name": "twinql-server",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Queries the semantic web on your behalf",
   "engines": {
     "node": ">=7.0.0"
