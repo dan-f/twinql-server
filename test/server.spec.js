@@ -26,7 +26,7 @@ describe('twinql server', () => {
       : sinon.stub().resolves(twinqlResponse)
     const { createServer } = proxyquire(SERVER_PATH, {
       twinql: {
-        LdpBackend: backendStub,
+        WebBackend: backendStub,
         query: queryStub
       }
     })
